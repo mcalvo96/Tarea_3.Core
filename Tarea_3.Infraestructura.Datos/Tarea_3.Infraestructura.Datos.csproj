@@ -62,7 +62,10 @@
       <DependentUpon>Tarea3Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\RepositorioDelito.cs" />
+    <Compile Include="Repositorio\RepositorioObjeto.cs" />
     <Compile Include="Repositorio\RepositorioPersona.cs" />
+    <Compile Include="Repositorio\RepositorioVehiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modelo\Tarea3Model.Context.tt">

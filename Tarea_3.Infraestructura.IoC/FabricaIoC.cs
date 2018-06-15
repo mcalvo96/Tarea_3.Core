@@ -18,11 +18,10 @@ namespace Tarea_3.Infraestructura.IoC
         {
             _unityContainer = new Unity.UnityContainer();
             _unityContainer.RegisterType<IRepositorioPersona, RepositorioPersona>();
-            //_unityContainer.RegisterType<IRepositorioTipoHabitacion, RepositorioTipoHabitacion>();
-            //_unityContainer.RegisterType<IRepositorioReserva, RepositorioReserva>();
-            //_unityContainer.RegisterType<IRepositorioPagina, RepositorioPagina>();
-            //_unityContainer.RegisterType<IRepositorioFacilidades, RepositorioFacilidades>();
-            //_unityContainer.RegisterType<IRepositorioCaracteristicaHabitacion, RepositorioCaracteristicaHabitacion>();
+            _unityContainer.RegisterType<IRepositorioDelito, RepositorioDelito>();
+            _unityContainer.RegisterType<IRepositorioObjeto, RepositorioObjeto>();
+            _unityContainer.RegisterType<IRepositorioVehiculo, RepositorioVehiculo>();
+           
         }//Fin del constructor.
         public static FabricaIoC Container
         {

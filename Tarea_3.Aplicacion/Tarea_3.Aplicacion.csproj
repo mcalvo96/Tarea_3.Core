@@ -40,8 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementacion\DelitoLN.cs" />
+    <Compile Include="Implementacion\ObjetoLN.cs" />
     <Compile Include="Implementacion\PersonaLN.cs" />
+    <Compile Include="Implementacion\VehiculoLN.cs" />
+    <Compile Include="Interfaces\IDelitoLN.cs" />
+    <Compile Include="Interfaces\IObjetoLN.cs" />
     <Compile Include="Interfaces\IPersonaLN.cs" />
+    <Compile Include="Interfaces\IVehiculoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

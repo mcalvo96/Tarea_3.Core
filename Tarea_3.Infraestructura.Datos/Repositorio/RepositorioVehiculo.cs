@@ -10,37 +10,37 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Tarea_3.Infraestructura.Datos.Repositorio
 {
-    public class RepositorioPersona : IRepositorioPersona
+    public class RepositorioVehiculo: IRepositorioVehiculo
     {
 
         private readonly Tarea_3_Ing_b41250Entities1 SS_Contexto;
 
-        public RepositorioPersona(Tarea_3_Ing_b41250Entities1 contexto)
+        public RepositorioVehiculo(Tarea_3_Ing_b41250Entities1 contexto)
         {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public List<persona> obtener()
+        public List<vehiculo> obtener()
         {
-            List<persona> listaPersona = new List<persona>();
+            List<vehiculo> listavehiculo = new List<vehiculo>();
             try
             {
-                listaPersona = (from list in SS_Contexto.persona select list).ToList<persona>();
+                listavehiculo = (from list in SS_Contexto.vehiculo select list).ToList<vehiculo>();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
-            return listaPersona;
+            return listavehiculo;
         }//Fin del método obtener.
 
-        public void insertar(persona persona)
+        public void insertar(vehiculo vehiculo)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                SS_Contexto.persona.Add(persona);
+                SS_Contexto.vehiculo.Add(vehiculo);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }
@@ -50,14 +50,14 @@ namespace Tarea_3.Infraestructura.Datos.Repositorio
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
         }
-        public void actualizar(persona persona)
+        public void actualizar(vehiculo vehiculo)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                var entity = SS_Contexto.persona.Find(persona.identificacion);
-                SS_Contexto.Entry(entity).CurrentValues.SetValues(persona);
+                var entity = SS_Contexto.vehiculo.Find(vehiculo.idVehiculo);
+                SS_Contexto.Entry(entity).CurrentValues.SetValues(vehiculo);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }
@@ -68,13 +68,13 @@ namespace Tarea_3.Infraestructura.Datos.Repositorio
             }//Fin del try-catch.            
         }
 
-        public void borrar(persona persona)
+        public void borrar(vehiculo vehiculo)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                SS_Contexto.persona.Remove(persona);
+                SS_Contexto.vehiculo.Remove(vehiculo);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }

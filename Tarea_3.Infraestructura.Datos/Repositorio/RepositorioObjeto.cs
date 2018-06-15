@@ -10,37 +10,37 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Tarea_3.Infraestructura.Datos.Repositorio
 {
-    public class RepositorioPersona : IRepositorioPersona
+    public class RepositorioObjeto : IRepositorioObjeto
     {
 
         private readonly Tarea_3_Ing_b41250Entities1 SS_Contexto;
 
-        public RepositorioPersona(Tarea_3_Ing_b41250Entities1 contexto)
+        public RepositorioObjeto(Tarea_3_Ing_b41250Entities1 contexto)
         {
             SS_Contexto = contexto;
         }//Fin del constructor.
 
-        public List<persona> obtener()
+        public List<objeto> obtener()
         {
-            List<persona> listaPersona = new List<persona>();
+            List<objeto> listaObjeto = new List<objeto>();
             try
             {
-                listaPersona = (from list in SS_Contexto.persona select list).ToList<persona>();
+                listaObjeto = (from list in SS_Contexto.objeto select list).ToList<objeto>();
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
-            return listaPersona;
+            return listaObjeto;
         }//Fin del método obtener.
 
-        public void insertar(persona persona)
+        public void insertar(objeto objeto)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                SS_Contexto.persona.Add(persona);
+                SS_Contexto.objeto.Add(objeto);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }
@@ -50,14 +50,14 @@ namespace Tarea_3.Infraestructura.Datos.Repositorio
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
         }
-        public void actualizar(persona persona)
+        public void actualizar(objeto objeto)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                var entity = SS_Contexto.persona.Find(persona.identificacion);
-                SS_Contexto.Entry(entity).CurrentValues.SetValues(persona);
+                var entity = SS_Contexto.objeto.Find(objeto.idObjeto);
+                SS_Contexto.Entry(entity).CurrentValues.SetValues(objeto);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }
@@ -68,13 +68,13 @@ namespace Tarea_3.Infraestructura.Datos.Repositorio
             }//Fin del try-catch.            
         }
 
-        public void borrar(persona persona)
+        public void borrar(objeto objeto)
         {
             DbContextTransaction dbTransaccion = SS_Contexto.Database.BeginTransaction();
 
             try
             {
-                SS_Contexto.persona.Remove(persona);
+                SS_Contexto.objeto.Remove(objeto);
                 SS_Contexto.SaveChanges();
                 dbTransaccion.Commit();
             }
@@ -84,5 +84,5 @@ namespace Tarea_3.Infraestructura.Datos.Repositorio
                 throw new Exception(ex.ToString());
             }//Fin del try-catch.
         }
-    }//Fin de la clase RepositorioPersona.
+    }//Fin de la clase Repositorioobjeto.
 }//Fin del namespace.

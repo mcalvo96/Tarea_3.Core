@@ -13,17 +13,17 @@ using System.Web.Http.Description;
 
 namespace Tarea_3.Core.Controllers
 {
-    [RoutePrefix("api/persona")]
-    public class personasController : ApiController
+    [RoutePrefix("api/vehiculo")]
+    public class vehiculoController : ApiController
     {
         [Route("")]
         [HttpGet]
-        [ResponseType(typeof(Respuesta<List<persona>>))]
-        public IHttpActionResult obtenerPersona()
+        [ResponseType(typeof(Respuesta<List<vehiculo>>))]
+        public IHttpActionResult obtenerVehiculo()
         {
-            Respuesta<List<persona>> respuesta = new Respuesta<List<persona>>();
-            var personaLN = FabricaIoC.Container.Resolver<PersonaLN>();
-            return Json(personaLN.lfObtener(), new JsonSerializerSettings()
+            Respuesta<List<vehiculo>> respuesta = new Respuesta<List<vehiculo>>();
+            var vehiculoLN = FabricaIoC.Container.Resolver<VehiculoLN>();
+            return Json(vehiculoLN.lfObtener(), new JsonSerializerSettings()
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
@@ -32,11 +32,11 @@ namespace Tarea_3.Core.Controllers
 
         [Route("")]
         [HttpPost]
-        [ResponseType(typeof(Respuesta<persona>))]
-        public IHttpActionResult insertarPersona([FromBody]persona persona)
+        [ResponseType(typeof(Respuesta<vehiculo>))]
+        public IHttpActionResult insertarVehiculo([FromBody]vehiculo vehiculo)
         {
-            PersonaLN personaLN = FabricaIoC.Container.Resolver<PersonaLN>();
-            return Json(personaLN.lfInsertar(persona), new JsonSerializerSettings()
+            VehiculoLN vehiculoLN = FabricaIoC.Container.Resolver<VehiculoLN>();
+            return Json(vehiculoLN.lfInsertar(vehiculo), new JsonSerializerSettings()
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
@@ -45,11 +45,11 @@ namespace Tarea_3.Core.Controllers
 
         [Route("")]
         [HttpPut]
-        [ResponseType(typeof(Respuesta<persona>))]
-        public IHttpActionResult actualizarPersonas([FromBody]persona persona)
+        [ResponseType(typeof(Respuesta<vehiculo>))]
+        public IHttpActionResult actualizarVehiculo([FromBody]vehiculo vehiculo)
         {
-            PersonaLN personasLN = FabricaIoC.Container.Resolver<PersonaLN>();
-            return Json(personasLN.lfActualizar(persona), new JsonSerializerSettings()
+            VehiculoLN vehiculoLN = FabricaIoC.Container.Resolver<VehiculoLN>();
+            return Json(vehiculoLN.lfActualizar(vehiculo), new JsonSerializerSettings()
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
@@ -58,11 +58,11 @@ namespace Tarea_3.Core.Controllers
 
         [Route("")]
         [HttpPut]
-        [ResponseType(typeof(Respuesta<persona>))]
-        public IHttpActionResult borrarPersonas([FromBody]persona persona)
+        [ResponseType(typeof(Respuesta<vehiculo>))]
+        public IHttpActionResult borrarVehiculo([FromBody]vehiculo vehiculo)
         {
-            PersonaLN personasLN = FabricaIoC.Container.Resolver<PersonaLN>();
-            return Json(personasLN.lfBorrar(persona), new JsonSerializerSettings()
+            VehiculoLN vehiculoLN = FabricaIoC.Container.Resolver<VehiculoLN>();
+            return Json(vehiculoLN.lfBorrar(vehiculo), new JsonSerializerSettings()
             {
                 PreserveReferencesHandling = PreserveReferencesHandling.Objects,
                 Formatting = Formatting.Indented
