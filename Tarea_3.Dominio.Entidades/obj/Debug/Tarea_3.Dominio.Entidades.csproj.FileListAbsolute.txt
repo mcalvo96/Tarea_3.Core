@@ -1,0 +1,4 @@
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.Entidades\bin\Debug\Tarea_3.Dominio.Entidades.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.Entidades\bin\Debug\Tarea_3.Dominio.Entidades.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.Entidades\obj\Debug\Tarea_3.Dominio.Entidades.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.Entidades\obj\Debug\Tarea_3.Dominio.Entidades.pdb

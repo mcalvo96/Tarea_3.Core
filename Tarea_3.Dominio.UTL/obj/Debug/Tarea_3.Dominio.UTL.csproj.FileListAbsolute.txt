@@ -1,0 +1,5 @@
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.UTL\bin\Debug\Tarea_3.Dominio.UTL.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.UTL\bin\Debug\Tarea_3.Dominio.UTL.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.UTL\obj\Debug\Tarea_3.Dominio.UTL.csprojResolveAssemblyReference.cache
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.UTL\obj\Debug\Tarea_3.Dominio.UTL.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio.UTL\obj\Debug\Tarea_3.Dominio.UTL.pdb

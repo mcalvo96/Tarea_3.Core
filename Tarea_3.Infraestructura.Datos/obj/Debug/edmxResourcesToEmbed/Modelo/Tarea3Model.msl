@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Tarea_3_Ing_b41250ModelStoreContainer" CdmEntityContainer="Tarea_3_Ing_b41250Entities1">
+    <EntitySetMapping Name="alias">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.alias">
+        <MappingFragment StoreEntitySet="alias">
+          <ScalarProperty Name="idAlias" ColumnName="idAlias" />
+          <ScalarProperty Name="alias1" ColumnName="alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="caracteristicaPersona">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.caracteristicaPersona">
+        <MappingFragment StoreEntitySet="caracteristicaPersona">
+          <ScalarProperty Name="idCaracteristica" ColumnName="idCaracteristica" />
+          <ScalarProperty Name="forma" ColumnName="forma" />
+          <ScalarProperty Name="tamanio" ColumnName="tamanio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoriaDelito">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.categoriaDelito">
+        <MappingFragment StoreEntitySet="categoriaDelito">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="delegacion">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delegacion">
+        <MappingFragment StoreEntitySet="delegacion">
+          <ScalarProperty Name="idDelegacion" ColumnName="idDelegacion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="delito">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delito">
+        <MappingFragment StoreEntitySet="delito">
+          <ScalarProperty Name="idDelito" ColumnName="idDelito" />
+          <ScalarProperty Name="origen" ColumnName="origen" />
+          <ScalarProperty Name="numeroUnico" ColumnName="numeroUnico" />
+          <ScalarProperty Name="modalidad" ColumnName="modalidad" />
+          <ScalarProperty Name="victima" ColumnName="victima" />
+          <ScalarProperty Name="subvictima" ColumnName="subvictima" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="perjuicio" ColumnName="perjuicio" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="tentativa" ColumnName="tentativa" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="narracion" ColumnName="narracion" />
+          <ScalarProperty Name="idCatDelito" ColumnName="idCatDelito" />
+          <ScalarProperty Name="idSubCatDelito" ColumnName="idSubCatDelito" />
+          <ScalarProperty Name="idDelitoSec" ColumnName="idDelitoSec" />
+          <ScalarProperty Name="idOficina" ColumnName="idOficina" />
+          <ScalarProperty Name="idHecho" ColumnName="idHecho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="delitoSecundario">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delitoSecundario">
+        <MappingFragment StoreEntitySet="delitoSecundario">
+          <ScalarProperty Name="idDelito" ColumnName="idDelito" />
+          <ScalarProperty Name="delitoS" ColumnName="delitoS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expediente">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.expediente">
+        <MappingFragment StoreEntitySet="expediente">
+          <ScalarProperty Name="idExpediente" ColumnName="idExpediente" />
+          <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+          <ScalarProperty Name="subGrupoVictimario" ColumnName="subGrupoVictimario" />
+          <ScalarProperty Name="numAutopsia" ColumnName="numAutopsia" />
+          <ScalarProperty Name="tipoMuerte" ColumnName="tipoMuerte" />
+          <ScalarProperty Name="funcion" ColumnName="funcion" />
+          <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+          <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+          <ScalarProperty Name="atributo" ColumnName="atributo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hecho">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.hecho">
+        <MappingFragment StoreEntitySet="hecho">
+          <ScalarProperty Name="idHecho" ColumnName="idHecho" />
+          <ScalarProperty Name="tipoUbicacion" ColumnName="tipoUbicacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="proyeccion" ColumnName="proyeccion" />
+          <ScalarProperty Name="señas" ColumnName="señas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="imagen">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.imagen">
+        <MappingFragment StoreEntitySet="imagen">
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="imagen1" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lugarHecho">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.lugarHecho">
+        <MappingFragment StoreEntitySet="lugarHecho">
+          <ScalarProperty Name="idLugar" ColumnName="idLugar" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="provincia" ColumnName="provincia" />
+          <ScalarProperty Name="canton" ColumnName="canton" />
+          <ScalarProperty Name="distrito" ColumnName="distrito" />
+          <ScalarProperty Name="barrio" ColumnName="barrio" />
+          <ScalarProperty Name="avenida" ColumnName="avenida" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="objeto">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.objeto">
+        <MappingFragment StoreEntitySet="objeto">
+          <ScalarProperty Name="idObjeto" ColumnName="idObjeto" />
+          <ScalarProperty Name="serie" ColumnName="serie" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+          <ScalarProperty Name="atributo" ColumnName="atributo" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="decomisado" ColumnName="decomisado" />
+          <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+          <ScalarProperty Name="idSubTipo" ColumnName="idSubTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oficina">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.oficina">
+        <MappingFragment StoreEntitySet="oficina">
+          <ScalarProperty Name="idOficina" ColumnName="idOficina" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="persona">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+          <ScalarProperty Name="profesion" ColumnName="profesion" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="detenido" ColumnName="detenido" />
+          <ScalarProperty Name="desaparecido" ColumnName="desaparecido" />
+          <ScalarProperty Name="revisado" ColumnName="revisado" />
+          <ScalarProperty Name="idCaracteristica" ColumnName="idCaracteristica" />
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="idPoblacion" ColumnName="idPoblacion" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="personaJuridica">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.personaJuridica">
+        <MappingFragment StoreEntitySet="personaJuridica">
+          <ScalarProperty Name="idPersonaJuridica" ColumnName="idPersonaJuridica" />
+          <ScalarProperty Name="cedulaJuridica" ColumnName="cedulaJuridica" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="nombreFantasia" ColumnName="nombreFantasia" />
+          <ScalarProperty Name="filial" ColumnName="filial" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+          <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+          <ScalarProperty Name="atributo" ColumnName="atributo" />
+          <ScalarProperty Name="allanada" ColumnName="allanada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="poblacionVulnerable">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.poblacionVulnerable">
+        <MappingFragment StoreEntitySet="poblacionVulnerable">
+          <ScalarProperty Name="idPoblacion" ColumnName="idPoblacion" />
+          <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="policia">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.policia">
+        <MappingFragment StoreEntitySet="policia">
+          <ScalarProperty Name="idPolicia" ColumnName="idPolicia" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="caseta" ColumnName="caseta" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="idUnidad" ColumnName="idUnidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subCategoriaDelito">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.subCategoriaDelito">
+        <MappingFragment StoreEntitySet="subCategoriaDelito">
+          <ScalarProperty Name="idSubCategoria" ColumnName="idSubCategoria" />
+          <ScalarProperty Name="subCategoria" ColumnName="subCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subTipoObjeto">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.subTipoObjeto">
+        <MappingFragment StoreEntitySet="subTipoObjeto">
+          <ScalarProperty Name="idSubTipo" ColumnName="idSubTipo" />
+          <ScalarProperty Name="subTipo" ColumnName="subTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoIdentificacion">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoIdentificacion">
+        <MappingFragment StoreEntitySet="tipoIdentificacion">
+          <ScalarProperty Name="tipoIdentificacion1" ColumnName="tipoIdentificacion" />
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoIdVehiculo">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoIdVehiculo">
+        <MappingFragment StoreEntitySet="tipoIdVehiculo">
+          <ScalarProperty Name="idTipoVeh" ColumnName="idTipoVeh" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoObjeto">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoObjeto">
+        <MappingFragment StoreEntitySet="tipoObjeto">
+          <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.unidad">
+        <MappingFragment StoreEntitySet="unidad">
+          <ScalarProperty Name="idUnidad" ColumnName="idUnidad" />
+          <ScalarProperty Name="unidad1" ColumnName="unidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehiculo">
+      <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.vehiculo">
+        <MappingFragment StoreEntitySet="vehiculo">
+          <ScalarProperty Name="idVehiculo" ColumnName="idVehiculo" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="numeroBien" ColumnName="numeroBien" />
+          <ScalarProperty Name="anio" ColumnName="anio" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="estilo" ColumnName="estilo" />
+          <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+          <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+          <ScalarProperty Name="atributo" ColumnName="atributo" />
+          <ScalarProperty Name="poliza" ColumnName="poliza" />
+          <ScalarProperty Name="decomisa" ColumnName="decomisa" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

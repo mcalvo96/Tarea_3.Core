@@ -1,0 +1,14 @@
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Infraestructura.Datos.dll.config
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Infraestructura.Datos.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Infraestructura.Datos.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\EntityFramework.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Dominio.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Dominio.Entidades.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Dominio.Entidades.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\Tarea_3.Dominio.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\EntityFramework.xml
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\obj\Debug\Tarea_3.Infraestructura.Datos.csprojResolveAssemblyReference.cache
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\obj\Debug\Tarea_3.Infraestructura.Datos.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Infraestructura.Datos\obj\Debug\Tarea_3.Infraestructura.Datos.pdb

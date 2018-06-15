@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce6be760a1924d62bed8637c6b00a68c" Name="Diagram1" ZoomLevel="25">
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.alias" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.caracteristicaPersona" Width="1.5" PointX="3.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.categoriaDelito" Width="1.5" PointX="11.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.delegacion" Width="1.5" PointX="11.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.delito" Width="1.5" PointX="16.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.delitoSecundario" Width="1.5" PointX="14" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.expediente" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.hecho" Width="1.5" PointX="14" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.imagen" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.lugarHecho" Width="1.5" PointX="11.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.objeto" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.oficina" Width="1.5" PointX="14" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.persona" Width="1.5" PointX="6" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.personaJuridica" Width="1.5" PointX="8.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.poblacionVulnerable" Width="1.5" PointX="3.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.policia" Width="1.5" PointX="11.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.rol" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.subCategoriaDelito" Width="1.5" PointX="14" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.subTipoObjeto" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.tipoIdentificacion" Width="1.5" PointX="3.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.tipoIdVehiculo" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.tipoObjeto" Width="1.5" PointX="1.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.unidad" Width="1.5" PointX="9" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Tarea_3_Ing_b41250Model.vehiculo" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_alias_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_persona_caracteristicaPersona" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_cat_x_sub" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delito_categoriaDelito" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delegacion_x_oficina" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delito_delitoSecundario" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delito_hecho" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delito_oficina" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_delito_subCategoriaDelito" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_expediente_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_lugar_x_hecho" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_objeto_imagen" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_persona_imagen" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_vehiculo_imagen" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_objeto_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_objeto_subTipoObjeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_objeto_tipoObjeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_persona_poblacionVulnerable" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_persona_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_persona_tipoIdentificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_personaJuridica_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_policia_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_policia_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_vehiculo_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_subTipoObjeto_tipoObjeto" ManuallyRouted="false" />
+        <AssociationConnector Association="Tarea_3_Ing_b41250Model.FK_vehiculo_tipoIdVehiculo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

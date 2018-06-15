@@ -1,0 +1,1785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Tarea_3_Ing_b41250Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="alias">
+          <Key>
+            <PropertyRef Name="idAlias" />
+          </Key>
+          <Property Name="idAlias" Type="int" Nullable="false" />
+          <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="caracteristicaPersona">
+          <Key>
+            <PropertyRef Name="idCaracteristica" />
+          </Key>
+          <Property Name="idCaracteristica" Type="int" Nullable="false" />
+          <Property Name="forma" Type="int" Nullable="false" />
+          <Property Name="tamanio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categoriaDelito">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="delegacion">
+          <Key>
+            <PropertyRef Name="idDelegacion" />
+          </Key>
+          <Property Name="idDelegacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="delito">
+          <Key>
+            <PropertyRef Name="idDelito" />
+          </Key>
+          <Property Name="idDelito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="origen" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroUnico" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="modalidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="victima" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="subvictima" Type="varchar" MaxLength="50" />
+          <Property Name="fechaIngreso" Type="date" Nullable="false" />
+          <Property Name="perjuicio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="moneda" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tentativa" Type="int" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="50" />
+          <Property Name="narracion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCatDelito" Type="int" Nullable="false" />
+          <Property Name="idSubCatDelito" Type="int" />
+          <Property Name="idDelitoSec" Type="int" />
+          <Property Name="idOficina" Type="int" Nullable="false" />
+          <Property Name="idHecho" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="delitoSecundario">
+          <Key>
+            <PropertyRef Name="idDelito" />
+          </Key>
+          <Property Name="idDelito" Type="int" Nullable="false" />
+          <Property Name="delitoS" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="expediente">
+          <Key>
+            <PropertyRef Name="idExpediente" />
+          </Key>
+          <Property Name="idExpediente" Type="int" Nullable="false" />
+          <Property Name="numExpediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subGrupoVictimario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numAutopsia" Type="int" Nullable="false" />
+          <Property Name="tipoMuerte" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="funcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="intensidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="atributo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hecho">
+          <Key>
+            <PropertyRef Name="idHecho" />
+          </Key>
+          <Property Name="idHecho" Type="int" Nullable="false" />
+          <Property Name="tipoUbicacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="proyeccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="señas" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="imagen">
+          <Key>
+            <PropertyRef Name="idImagen" />
+          </Key>
+          <Property Name="idImagen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="comentario" Type="varchar" MaxLength="50" />
+          <Property Name="imagen" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lugarHecho">
+          <Key>
+            <PropertyRef Name="idLugar" />
+          </Key>
+          <Property Name="idLugar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pais" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="provincia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="canton" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="distrito" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="barrio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="avenida" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="calle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="x" Type="float" Nullable="false" />
+          <Property Name="y" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="objeto">
+          <Key>
+            <PropertyRef Name="idObjeto" />
+          </Key>
+          <Property Name="idObjeto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="serie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="modelo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="atributo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="decomisado" Type="int" />
+          <Property Name="idTipo" Type="int" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="idImagen" Type="int" Nullable="false" />
+          <Property Name="idSubTipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="oficina">
+          <Key>
+            <PropertyRef Name="idOficina" />
+          </Key>
+          <Property Name="idOficina" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="identificacion" />
+          </Key>
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="primerApellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="segundoApellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estadoCivil" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sexo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nacionalidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="profesion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="edad" Type="int" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="50" />
+          <Property Name="detenido" Type="int" />
+          <Property Name="desaparecido" Type="int" />
+          <Property Name="revisado" Type="int" />
+          <Property Name="idCaracteristica" Type="int" Nullable="false" />
+          <Property Name="identificacion" Type="int" Nullable="false" />
+          <Property Name="idPoblacion" Type="int" Nullable="false" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="idImagen" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="personaJuridica">
+          <Key>
+            <PropertyRef Name="idPersonaJuridica" />
+          </Key>
+          <Property Name="idPersonaJuridica" Type="int" Nullable="false" />
+          <Property Name="cedulaJuridica" Type="int" Nullable="false" />
+          <Property Name="razonSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreFantasia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="filial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="intensidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="atributo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="allanada" Type="int" />
+        </EntityType>
+        <EntityType Name="poblacionVulnerable">
+          <Key>
+            <PropertyRef Name="idPoblacion" />
+          </Key>
+          <Property Name="idPoblacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="poblacion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="policia">
+          <Key>
+            <PropertyRef Name="idPolicia" />
+          </Key>
+          <Property Name="idPolicia" Type="int" Nullable="false" />
+          <Property Name="placa" Type="int" Nullable="false" />
+          <Property Name="caseta" Type="varchar" MaxLength="50" />
+          <Property Name="detalle" Type="varchar" MaxLength="50" />
+          <Property Name="idUnidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subCategoriaDelito">
+          <Key>
+            <PropertyRef Name="idSubCategoria" />
+          </Key>
+          <Property Name="idSubCategoria" Type="int" Nullable="false" />
+          <Property Name="subCategoria" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subTipoObjeto">
+          <Key>
+            <PropertyRef Name="idSubTipo" />
+          </Key>
+          <Property Name="idSubTipo" Type="int" Nullable="false" />
+          <Property Name="subTipo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoIdentificacion">
+          <Key>
+            <PropertyRef Name="identificacion" />
+          </Key>
+          <Property Name="tipoIdentificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="identificacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoIdVehiculo">
+          <Key>
+            <PropertyRef Name="idTipoVeh" />
+          </Key>
+          <Property Name="idTipoVeh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoObjeto">
+          <Key>
+            <PropertyRef Name="idTipo" />
+          </Key>
+          <Property Name="idTipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="unidad">
+          <Key>
+            <PropertyRef Name="idUnidad" />
+          </Key>
+          <Property Name="idUnidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="unidad" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vehiculo">
+          <Key>
+            <PropertyRef Name="idVehiculo" />
+          </Key>
+          <Property Name="idVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="clase" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroBien" Type="int" Nullable="false" />
+          <Property Name="anio" Type="date" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="color" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estilo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombreEntidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="intensidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="atributo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="poliza" Type="int" />
+          <Property Name="decomisa" Type="int" />
+          <Property Name="observacion" Type="varchar" MaxLength="50" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+          <Property Name="idImagen" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_alias_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="alias" Type="Self.alias" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="alias">
+              <PropertyRef Name="idAlias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cat_x_sub">
+          <End Role="categoriaDelito" Type="Self.categoriaDelito" Multiplicity="1" />
+          <End Role="subCategoriaDelito" Type="Self.subCategoriaDelito" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="categoriaDelito">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="subCategoriaDelito">
+              <PropertyRef Name="idSubCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delegacion_x_oficina">
+          <End Role="delegacion" Type="Self.delegacion" Multiplicity="1" />
+          <End Role="oficina" Type="Self.oficina" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="delegacion">
+              <PropertyRef Name="idDelegacion" />
+            </Principal>
+            <Dependent Role="oficina">
+              <PropertyRef Name="idOficina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_categoriaDelito">
+          <End Role="categoriaDelito" Type="Self.categoriaDelito" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoriaDelito">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idCatDelito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_delitoSecundario">
+          <End Role="delitoSecundario" Type="Self.delitoSecundario" Multiplicity="0..1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="delitoSecundario">
+              <PropertyRef Name="idDelito" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idDelitoSec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_hecho">
+          <End Role="hecho" Type="Self.hecho" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hecho">
+              <PropertyRef Name="idHecho" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idHecho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_oficina">
+          <End Role="oficina" Type="Self.oficina" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oficina">
+              <PropertyRef Name="idOficina" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idOficina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_subCategoriaDelito">
+          <End Role="subCategoriaDelito" Type="Self.subCategoriaDelito" Multiplicity="0..1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subCategoriaDelito">
+              <PropertyRef Name="idSubCategoria" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idSubCatDelito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expediente_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="expediente" Type="Self.expediente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="expediente">
+              <PropertyRef Name="idExpediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lugar_x_hecho">
+          <End Role="lugarHecho" Type="Self.lugarHecho" Multiplicity="1" />
+          <End Role="hecho" Type="Self.hecho" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="lugarHecho">
+              <PropertyRef Name="idLugar" />
+            </Principal>
+            <Dependent Role="hecho">
+              <PropertyRef Name="idHecho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_subTipoObjeto">
+          <End Role="subTipoObjeto" Type="Self.subTipoObjeto" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subTipoObjeto">
+              <PropertyRef Name="idSubTipo" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idSubTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_tipoObjeto">
+          <End Role="tipoObjeto" Type="Self.tipoObjeto" Multiplicity="0..1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoObjeto">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_caracteristicaPersona">
+          <End Role="caracteristicaPersona" Type="Self.caracteristicaPersona" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="caracteristicaPersona">
+              <PropertyRef Name="idCaracteristica" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idCaracteristica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_poblacionVulnerable">
+          <End Role="poblacionVulnerable" Type="Self.poblacionVulnerable" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poblacionVulnerable">
+              <PropertyRef Name="idPoblacion" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idPoblacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_tipoIdentificacion">
+          <End Role="tipoIdentificacion" Type="Self.tipoIdentificacion" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoIdentificacion">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_personaJuridica_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="personaJuridica" Type="Self.personaJuridica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="personaJuridica">
+              <PropertyRef Name="idPersonaJuridica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_policia_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="policia" Type="Self.policia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="policia">
+              <PropertyRef Name="idPolicia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_policia_unidad">
+          <End Role="unidad" Type="Self.unidad" Multiplicity="1" />
+          <End Role="policia" Type="Self.policia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidad">
+              <PropertyRef Name="idUnidad" />
+            </Principal>
+            <Dependent Role="policia">
+              <PropertyRef Name="idUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subTipoObjeto_tipoObjeto">
+          <End Role="tipoObjeto" Type="Self.tipoObjeto" Multiplicity="1" />
+          <End Role="subTipoObjeto" Type="Self.subTipoObjeto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoObjeto">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="subTipoObjeto">
+              <PropertyRef Name="idSubTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_tipoIdVehiculo">
+          <End Role="tipoIdVehiculo" Type="Self.tipoIdVehiculo" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoIdVehiculo">
+              <PropertyRef Name="idTipoVeh" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Tarea_3_Ing_b41250ModelStoreContainer">
+          <EntitySet Name="alias" EntityType="Self.alias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="caracteristicaPersona" EntityType="Self.caracteristicaPersona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="categoriaDelito" EntityType="Self.categoriaDelito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="delegacion" EntityType="Self.delegacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="delito" EntityType="Self.delito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="delitoSecundario" EntityType="Self.delitoSecundario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="expediente" EntityType="Self.expediente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hecho" EntityType="Self.hecho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="imagen" EntityType="Self.imagen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lugarHecho" EntityType="Self.lugarHecho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="objeto" EntityType="Self.objeto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="oficina" EntityType="Self.oficina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="personaJuridica" EntityType="Self.personaJuridica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="poblacionVulnerable" EntityType="Self.poblacionVulnerable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="policia" EntityType="Self.policia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subCategoriaDelito" EntityType="Self.subCategoriaDelito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subTipoObjeto" EntityType="Self.subTipoObjeto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoIdentificacion" EntityType="Self.tipoIdentificacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoIdVehiculo" EntityType="Self.tipoIdVehiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoObjeto" EntityType="Self.tipoObjeto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="unidad" EntityType="Self.unidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehiculo" EntityType="Self.vehiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_alias_persona" Association="Self.FK_alias_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="alias" EntitySet="alias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cat_x_sub" Association="Self.FK_cat_x_sub">
+            <End Role="categoriaDelito" EntitySet="categoriaDelito" />
+            <End Role="subCategoriaDelito" EntitySet="subCategoriaDelito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delegacion_x_oficina" Association="Self.FK_delegacion_x_oficina">
+            <End Role="delegacion" EntitySet="delegacion" />
+            <End Role="oficina" EntitySet="oficina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_categoriaDelito" Association="Self.FK_delito_categoriaDelito">
+            <End Role="categoriaDelito" EntitySet="categoriaDelito" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_delitoSecundario" Association="Self.FK_delito_delitoSecundario">
+            <End Role="delitoSecundario" EntitySet="delitoSecundario" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_hecho" Association="Self.FK_delito_hecho">
+            <End Role="hecho" EntitySet="hecho" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_oficina" Association="Self.FK_delito_oficina">
+            <End Role="oficina" EntitySet="oficina" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_subCategoriaDelito" Association="Self.FK_delito_subCategoriaDelito">
+            <End Role="subCategoriaDelito" EntitySet="subCategoriaDelito" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expediente_persona" Association="Self.FK_expediente_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="expediente" EntitySet="expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lugar_x_hecho" Association="Self.FK_lugar_x_hecho">
+            <End Role="lugarHecho" EntitySet="lugarHecho" />
+            <End Role="hecho" EntitySet="hecho" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_imagen" Association="Self.FK_objeto_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_rol" Association="Self.FK_objeto_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_subTipoObjeto" Association="Self.FK_objeto_subTipoObjeto">
+            <End Role="subTipoObjeto" EntitySet="subTipoObjeto" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_tipoObjeto" Association="Self.FK_objeto_tipoObjeto">
+            <End Role="tipoObjeto" EntitySet="tipoObjeto" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_caracteristicaPersona" Association="Self.FK_persona_caracteristicaPersona">
+            <End Role="caracteristicaPersona" EntitySet="caracteristicaPersona" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_imagen" Association="Self.FK_persona_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_poblacionVulnerable" Association="Self.FK_persona_poblacionVulnerable">
+            <End Role="poblacionVulnerable" EntitySet="poblacionVulnerable" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_rol" Association="Self.FK_persona_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_tipoIdentificacion" Association="Self.FK_persona_tipoIdentificacion">
+            <End Role="tipoIdentificacion" EntitySet="tipoIdentificacion" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personaJuridica_persona" Association="Self.FK_personaJuridica_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="personaJuridica" EntitySet="personaJuridica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_policia_persona" Association="Self.FK_policia_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="policia" EntitySet="policia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_policia_unidad" Association="Self.FK_policia_unidad">
+            <End Role="unidad" EntitySet="unidad" />
+            <End Role="policia" EntitySet="policia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subTipoObjeto_tipoObjeto" Association="Self.FK_subTipoObjeto_tipoObjeto">
+            <End Role="tipoObjeto" EntitySet="tipoObjeto" />
+            <End Role="subTipoObjeto" EntitySet="subTipoObjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_imagen" Association="Self.FK_vehiculo_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_rol" Association="Self.FK_vehiculo_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_tipoIdVehiculo" Association="Self.FK_vehiculo_tipoIdVehiculo">
+            <End Role="tipoIdVehiculo" EntitySet="tipoIdVehiculo" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Tarea_3_Ing_b41250Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="alias">
+          <Key>
+            <PropertyRef Name="idAlias" />
+          </Key>
+          <Property Name="idAlias" Type="Int32" Nullable="false" />
+          <Property Name="alias1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_alias_persona" FromRole="alias" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="caracteristicaPersona">
+          <Key>
+            <PropertyRef Name="idCaracteristica" />
+          </Key>
+          <Property Name="idCaracteristica" Type="Int32" Nullable="false" />
+          <Property Name="forma" Type="Int32" Nullable="false" />
+          <Property Name="tamanio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_persona_caracteristicaPersona" FromRole="caracteristicaPersona" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="categoriaDelito">
+          <Key>
+            <PropertyRef Name="idCategoria" />
+          </Key>
+          <Property Name="idCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="subCategoriaDelito" Relationship="Self.FK_cat_x_sub" FromRole="categoriaDelito" ToRole="subCategoriaDelito" />
+          <NavigationProperty Name="delito" Relationship="Self.FK_delito_categoriaDelito" FromRole="categoriaDelito" ToRole="delito" />
+        </EntityType>
+        <EntityType Name="delegacion">
+          <Key>
+            <PropertyRef Name="idDelegacion" />
+          </Key>
+          <Property Name="idDelegacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="oficina" Relationship="Self.FK_delegacion_x_oficina" FromRole="delegacion" ToRole="oficina" />
+        </EntityType>
+        <EntityType Name="delito">
+          <Key>
+            <PropertyRef Name="idDelito" />
+          </Key>
+          <Property Name="idDelito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="origen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroUnico" Type="Guid" Nullable="false" />
+          <Property Name="modalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="victima" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subvictima" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="perjuicio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="moneda" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tentativa" Type="Int32" Nullable="false" />
+          <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="narracion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCatDelito" Type="Int32" Nullable="false" />
+          <Property Name="idSubCatDelito" Type="Int32" />
+          <Property Name="idDelitoSec" Type="Int32" />
+          <Property Name="idOficina" Type="Int32" Nullable="false" />
+          <Property Name="idHecho" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="categoriaDelito" Relationship="Self.FK_delito_categoriaDelito" FromRole="delito" ToRole="categoriaDelito" />
+          <NavigationProperty Name="delitoSecundario" Relationship="Self.FK_delito_delitoSecundario" FromRole="delito" ToRole="delitoSecundario" />
+          <NavigationProperty Name="hecho" Relationship="Self.FK_delito_hecho" FromRole="delito" ToRole="hecho" />
+          <NavigationProperty Name="oficina" Relationship="Self.FK_delito_oficina" FromRole="delito" ToRole="oficina" />
+          <NavigationProperty Name="subCategoriaDelito" Relationship="Self.FK_delito_subCategoriaDelito" FromRole="delito" ToRole="subCategoriaDelito" />
+        </EntityType>
+        <EntityType Name="delitoSecundario">
+          <Key>
+            <PropertyRef Name="idDelito" />
+          </Key>
+          <Property Name="idDelito" Type="Int32" Nullable="false" />
+          <Property Name="delitoS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="delito" Relationship="Self.FK_delito_delitoSecundario" FromRole="delitoSecundario" ToRole="delito" />
+        </EntityType>
+        <EntityType Name="expediente">
+          <Key>
+            <PropertyRef Name="idExpediente" />
+          </Key>
+          <Property Name="idExpediente" Type="Int32" Nullable="false" />
+          <Property Name="numExpediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subGrupoVictimario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numAutopsia" Type="Int32" Nullable="false" />
+          <Property Name="tipoMuerte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="funcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="intensidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atributo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_expediente_persona" FromRole="expediente" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="hecho">
+          <Key>
+            <PropertyRef Name="idHecho" />
+          </Key>
+          <Property Name="idHecho" Type="Int32" Nullable="false" />
+          <Property Name="tipoUbicacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="proyeccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="señas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="delito" Relationship="Self.FK_delito_hecho" FromRole="hecho" ToRole="delito" />
+          <NavigationProperty Name="lugarHecho" Relationship="Self.FK_lugar_x_hecho" FromRole="hecho" ToRole="lugarHecho" />
+        </EntityType>
+        <EntityType Name="imagen">
+          <Key>
+            <PropertyRef Name="idImagen" />
+          </Key>
+          <Property Name="idImagen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="imagen1" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="objeto" Relationship="Self.FK_objeto_imagen" FromRole="imagen" ToRole="objeto" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_persona_imagen" FromRole="imagen" ToRole="persona" />
+          <NavigationProperty Name="vehiculo" Relationship="Self.FK_vehiculo_imagen" FromRole="imagen" ToRole="vehiculo" />
+        </EntityType>
+        <EntityType Name="lugarHecho">
+          <Key>
+            <PropertyRef Name="idLugar" />
+          </Key>
+          <Property Name="idLugar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="canton" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="distrito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="barrio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="avenida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="x" Type="Double" Nullable="false" />
+          <Property Name="y" Type="Double" Nullable="false" />
+          <NavigationProperty Name="hecho" Relationship="Self.FK_lugar_x_hecho" FromRole="lugarHecho" ToRole="hecho" />
+        </EntityType>
+        <EntityType Name="objeto">
+          <Key>
+            <PropertyRef Name="idObjeto" />
+          </Key>
+          <Property Name="idObjeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="serie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atributo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="observacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="decomisado" Type="Int32" />
+          <Property Name="idTipo" Type="Int32" />
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="idImagen" Type="Int32" Nullable="false" />
+          <Property Name="idSubTipo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="imagen" Relationship="Self.FK_objeto_imagen" FromRole="objeto" ToRole="imagen" />
+          <NavigationProperty Name="rol" Relationship="Self.FK_objeto_rol" FromRole="objeto" ToRole="rol" />
+          <NavigationProperty Name="subTipoObjeto" Relationship="Self.FK_objeto_subTipoObjeto" FromRole="objeto" ToRole="subTipoObjeto" />
+          <NavigationProperty Name="tipoObjeto" Relationship="Self.FK_objeto_tipoObjeto" FromRole="objeto" ToRole="tipoObjeto" />
+        </EntityType>
+        <EntityType Name="oficina">
+          <Key>
+            <PropertyRef Name="idOficina" />
+          </Key>
+          <Property Name="idOficina" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="delegacion" Relationship="Self.FK_delegacion_x_oficina" FromRole="oficina" ToRole="delegacion" />
+          <NavigationProperty Name="delito" Relationship="Self.FK_delito_oficina" FromRole="oficina" ToRole="delito" />
+        </EntityType>
+        <EntityType Name="persona">
+          <Key>
+            <PropertyRef Name="identificacion" />
+          </Key>
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="primerApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="segundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estadoCivil" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nacionalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="profesion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="edad" Type="Int32" Nullable="false" />
+          <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="detenido" Type="Int32" />
+          <Property Name="desaparecido" Type="Int32" />
+          <Property Name="revisado" Type="Int32" />
+          <Property Name="idCaracteristica" Type="Int32" Nullable="false" />
+          <Property Name="identificacion" Type="Int32" Nullable="false" />
+          <Property Name="idPoblacion" Type="Int32" Nullable="false" />
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="idImagen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alias" Relationship="Self.FK_alias_persona" FromRole="persona" ToRole="alias" />
+          <NavigationProperty Name="caracteristicaPersona" Relationship="Self.FK_persona_caracteristicaPersona" FromRole="persona" ToRole="caracteristicaPersona" />
+          <NavigationProperty Name="expediente" Relationship="Self.FK_expediente_persona" FromRole="persona" ToRole="expediente" />
+          <NavigationProperty Name="imagen" Relationship="Self.FK_persona_imagen" FromRole="persona" ToRole="imagen" />
+          <NavigationProperty Name="poblacionVulnerable" Relationship="Self.FK_persona_poblacionVulnerable" FromRole="persona" ToRole="poblacionVulnerable" />
+          <NavigationProperty Name="rol" Relationship="Self.FK_persona_rol" FromRole="persona" ToRole="rol" />
+          <NavigationProperty Name="tipoIdentificacion" Relationship="Self.FK_persona_tipoIdentificacion" FromRole="persona" ToRole="tipoIdentificacion" />
+          <NavigationProperty Name="personaJuridica" Relationship="Self.FK_personaJuridica_persona" FromRole="persona" ToRole="personaJuridica" />
+          <NavigationProperty Name="policia" Relationship="Self.FK_policia_persona" FromRole="persona" ToRole="policia" />
+        </EntityType>
+        <EntityType Name="personaJuridica">
+          <Key>
+            <PropertyRef Name="idPersonaJuridica" />
+          </Key>
+          <Property Name="idPersonaJuridica" Type="Int32" Nullable="false" />
+          <Property Name="cedulaJuridica" Type="Int32" Nullable="false" />
+          <Property Name="razonSocial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreFantasia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="filial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="intensidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atributo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="allanada" Type="Int32" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_personaJuridica_persona" FromRole="personaJuridica" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="poblacionVulnerable">
+          <Key>
+            <PropertyRef Name="idPoblacion" />
+          </Key>
+          <Property Name="idPoblacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_persona_poblacionVulnerable" FromRole="poblacionVulnerable" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="policia">
+          <Key>
+            <PropertyRef Name="idPolicia" />
+          </Key>
+          <Property Name="idPolicia" Type="Int32" Nullable="false" />
+          <Property Name="placa" Type="Int32" Nullable="false" />
+          <Property Name="caseta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="detalle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idUnidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_policia_persona" FromRole="policia" ToRole="persona" />
+          <NavigationProperty Name="unidad" Relationship="Self.FK_policia_unidad" FromRole="policia" ToRole="unidad" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="objeto" Relationship="Self.FK_objeto_rol" FromRole="rol" ToRole="objeto" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_persona_rol" FromRole="rol" ToRole="persona" />
+          <NavigationProperty Name="vehiculo" Relationship="Self.FK_vehiculo_rol" FromRole="rol" ToRole="vehiculo" />
+        </EntityType>
+        <EntityType Name="subCategoriaDelito">
+          <Key>
+            <PropertyRef Name="idSubCategoria" />
+          </Key>
+          <Property Name="idSubCategoria" Type="Int32" Nullable="false" />
+          <Property Name="subCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="categoriaDelito" Relationship="Self.FK_cat_x_sub" FromRole="subCategoriaDelito" ToRole="categoriaDelito" />
+          <NavigationProperty Name="delito" Relationship="Self.FK_delito_subCategoriaDelito" FromRole="subCategoriaDelito" ToRole="delito" />
+        </EntityType>
+        <EntityType Name="subTipoObjeto">
+          <Key>
+            <PropertyRef Name="idSubTipo" />
+          </Key>
+          <Property Name="idSubTipo" Type="Int32" Nullable="false" />
+          <Property Name="subTipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="objeto" Relationship="Self.FK_objeto_subTipoObjeto" FromRole="subTipoObjeto" ToRole="objeto" />
+          <NavigationProperty Name="tipoObjeto" Relationship="Self.FK_subTipoObjeto_tipoObjeto" FromRole="subTipoObjeto" ToRole="tipoObjeto" />
+        </EntityType>
+        <EntityType Name="tipoIdentificacion">
+          <Key>
+            <PropertyRef Name="identificacion" />
+          </Key>
+          <Property Name="tipoIdentificacion1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="identificacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="persona" Relationship="Self.FK_persona_tipoIdentificacion" FromRole="tipoIdentificacion" ToRole="persona" />
+        </EntityType>
+        <EntityType Name="tipoIdVehiculo">
+          <Key>
+            <PropertyRef Name="idTipoVeh" />
+          </Key>
+          <Property Name="idTipoVeh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="vehiculo" Relationship="Self.FK_vehiculo_tipoIdVehiculo" FromRole="tipoIdVehiculo" ToRole="vehiculo" />
+        </EntityType>
+        <EntityType Name="tipoObjeto">
+          <Key>
+            <PropertyRef Name="idTipo" />
+          </Key>
+          <Property Name="idTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="objeto" Relationship="Self.FK_objeto_tipoObjeto" FromRole="tipoObjeto" ToRole="objeto" />
+          <NavigationProperty Name="subTipoObjeto" Relationship="Self.FK_subTipoObjeto_tipoObjeto" FromRole="tipoObjeto" ToRole="subTipoObjeto" />
+        </EntityType>
+        <EntityType Name="unidad">
+          <Key>
+            <PropertyRef Name="idUnidad" />
+          </Key>
+          <Property Name="idUnidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="unidad1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="policia" Relationship="Self.FK_policia_unidad" FromRole="unidad" ToRole="policia" />
+        </EntityType>
+        <EntityType Name="vehiculo">
+          <Key>
+            <PropertyRef Name="idVehiculo" />
+          </Key>
+          <Property Name="idVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="clase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numeroBien" Type="Int32" Nullable="false" />
+          <Property Name="anio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estilo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombreEntidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="intensidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="atributo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="poliza" Type="Int32" />
+          <Property Name="decomisa" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <Property Name="idImagen" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="imagen" Relationship="Self.FK_vehiculo_imagen" FromRole="vehiculo" ToRole="imagen" />
+          <NavigationProperty Name="rol" Relationship="Self.FK_vehiculo_rol" FromRole="vehiculo" ToRole="rol" />
+          <NavigationProperty Name="tipoIdVehiculo" Relationship="Self.FK_vehiculo_tipoIdVehiculo" FromRole="vehiculo" ToRole="tipoIdVehiculo" />
+        </EntityType>
+        <Association Name="FK_alias_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="alias" Type="Self.alias" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="alias">
+              <PropertyRef Name="idAlias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_caracteristicaPersona">
+          <End Role="caracteristicaPersona" Type="Self.caracteristicaPersona" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="caracteristicaPersona">
+              <PropertyRef Name="idCaracteristica" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idCaracteristica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cat_x_sub">
+          <End Role="categoriaDelito" Type="Self.categoriaDelito" Multiplicity="1" />
+          <End Role="subCategoriaDelito" Type="Self.subCategoriaDelito" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="categoriaDelito">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="subCategoriaDelito">
+              <PropertyRef Name="idSubCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_categoriaDelito">
+          <End Role="categoriaDelito" Type="Self.categoriaDelito" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoriaDelito">
+              <PropertyRef Name="idCategoria" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idCatDelito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delegacion_x_oficina">
+          <End Role="delegacion" Type="Self.delegacion" Multiplicity="1" />
+          <End Role="oficina" Type="Self.oficina" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="delegacion">
+              <PropertyRef Name="idDelegacion" />
+            </Principal>
+            <Dependent Role="oficina">
+              <PropertyRef Name="idOficina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_delitoSecundario">
+          <End Role="delitoSecundario" Type="Self.delitoSecundario" Multiplicity="0..1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="delitoSecundario">
+              <PropertyRef Name="idDelito" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idDelitoSec" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_hecho">
+          <End Role="hecho" Type="Self.hecho" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hecho">
+              <PropertyRef Name="idHecho" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idHecho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_oficina">
+          <End Role="oficina" Type="Self.oficina" Multiplicity="1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oficina">
+              <PropertyRef Name="idOficina" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idOficina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_delito_subCategoriaDelito">
+          <End Role="subCategoriaDelito" Type="Self.subCategoriaDelito" Multiplicity="0..1" />
+          <End Role="delito" Type="Self.delito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subCategoriaDelito">
+              <PropertyRef Name="idSubCategoria" />
+            </Principal>
+            <Dependent Role="delito">
+              <PropertyRef Name="idSubCatDelito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expediente_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="expediente" Type="Self.expediente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="expediente">
+              <PropertyRef Name="idExpediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lugar_x_hecho">
+          <End Role="lugarHecho" Type="Self.lugarHecho" Multiplicity="1" />
+          <End Role="hecho" Type="Self.hecho" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="lugarHecho">
+              <PropertyRef Name="idLugar" />
+            </Principal>
+            <Dependent Role="hecho">
+              <PropertyRef Name="idHecho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_imagen">
+          <End Role="imagen" Type="Self.imagen" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="imagen">
+              <PropertyRef Name="idImagen" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idImagen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_subTipoObjeto">
+          <End Role="subTipoObjeto" Type="Self.subTipoObjeto" Multiplicity="1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subTipoObjeto">
+              <PropertyRef Name="idSubTipo" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idSubTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_objeto_tipoObjeto">
+          <End Role="tipoObjeto" Type="Self.tipoObjeto" Multiplicity="0..1" />
+          <End Role="objeto" Type="Self.objeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoObjeto">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="objeto">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_poblacionVulnerable">
+          <End Role="poblacionVulnerable" Type="Self.poblacionVulnerable" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poblacionVulnerable">
+              <PropertyRef Name="idPoblacion" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idPoblacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_persona_tipoIdentificacion">
+          <End Role="tipoIdentificacion" Type="Self.tipoIdentificacion" Multiplicity="1" />
+          <End Role="persona" Type="Self.persona" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoIdentificacion">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_personaJuridica_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="personaJuridica" Type="Self.personaJuridica" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="personaJuridica">
+              <PropertyRef Name="idPersonaJuridica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_policia_persona">
+          <End Role="persona" Type="Self.persona" Multiplicity="1" />
+          <End Role="policia" Type="Self.policia" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="persona">
+              <PropertyRef Name="identificacion" />
+            </Principal>
+            <Dependent Role="policia">
+              <PropertyRef Name="idPolicia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_policia_unidad">
+          <End Role="unidad" Type="Self.unidad" Multiplicity="1" />
+          <End Role="policia" Type="Self.policia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="unidad">
+              <PropertyRef Name="idUnidad" />
+            </Principal>
+            <Dependent Role="policia">
+              <PropertyRef Name="idUnidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subTipoObjeto_tipoObjeto">
+          <End Role="tipoObjeto" Type="Self.tipoObjeto" Multiplicity="1" />
+          <End Role="subTipoObjeto" Type="Self.subTipoObjeto" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoObjeto">
+              <PropertyRef Name="idTipo" />
+            </Principal>
+            <Dependent Role="subTipoObjeto">
+              <PropertyRef Name="idSubTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehiculo_tipoIdVehiculo">
+          <End Role="tipoIdVehiculo" Type="Self.tipoIdVehiculo" Multiplicity="1" />
+          <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tipoIdVehiculo">
+              <PropertyRef Name="idTipoVeh" />
+            </Principal>
+            <Dependent Role="vehiculo">
+              <PropertyRef Name="idVehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Tarea_3_Ing_b41250Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alias" EntityType="Self.alias" />
+          <EntitySet Name="caracteristicaPersona" EntityType="Self.caracteristicaPersona" />
+          <EntitySet Name="categoriaDelito" EntityType="Self.categoriaDelito" />
+          <EntitySet Name="delegacion" EntityType="Self.delegacion" />
+          <EntitySet Name="delito" EntityType="Self.delito" />
+          <EntitySet Name="delitoSecundario" EntityType="Self.delitoSecundario" />
+          <EntitySet Name="expediente" EntityType="Self.expediente" />
+          <EntitySet Name="hecho" EntityType="Self.hecho" />
+          <EntitySet Name="imagen" EntityType="Self.imagen" />
+          <EntitySet Name="lugarHecho" EntityType="Self.lugarHecho" />
+          <EntitySet Name="objeto" EntityType="Self.objeto" />
+          <EntitySet Name="oficina" EntityType="Self.oficina" />
+          <EntitySet Name="persona" EntityType="Self.persona" />
+          <EntitySet Name="personaJuridica" EntityType="Self.personaJuridica" />
+          <EntitySet Name="poblacionVulnerable" EntityType="Self.poblacionVulnerable" />
+          <EntitySet Name="policia" EntityType="Self.policia" />
+          <EntitySet Name="rol" EntityType="Self.rol" />
+          <EntitySet Name="subCategoriaDelito" EntityType="Self.subCategoriaDelito" />
+          <EntitySet Name="subTipoObjeto" EntityType="Self.subTipoObjeto" />
+          <EntitySet Name="tipoIdentificacion" EntityType="Self.tipoIdentificacion" />
+          <EntitySet Name="tipoIdVehiculo" EntityType="Self.tipoIdVehiculo" />
+          <EntitySet Name="tipoObjeto" EntityType="Self.tipoObjeto" />
+          <EntitySet Name="unidad" EntityType="Self.unidad" />
+          <EntitySet Name="vehiculo" EntityType="Self.vehiculo" />
+          <AssociationSet Name="FK_alias_persona" Association="Self.FK_alias_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="alias" EntitySet="alias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_caracteristicaPersona" Association="Self.FK_persona_caracteristicaPersona">
+            <End Role="caracteristicaPersona" EntitySet="caracteristicaPersona" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cat_x_sub" Association="Self.FK_cat_x_sub">
+            <End Role="categoriaDelito" EntitySet="categoriaDelito" />
+            <End Role="subCategoriaDelito" EntitySet="subCategoriaDelito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_categoriaDelito" Association="Self.FK_delito_categoriaDelito">
+            <End Role="categoriaDelito" EntitySet="categoriaDelito" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delegacion_x_oficina" Association="Self.FK_delegacion_x_oficina">
+            <End Role="delegacion" EntitySet="delegacion" />
+            <End Role="oficina" EntitySet="oficina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_delitoSecundario" Association="Self.FK_delito_delitoSecundario">
+            <End Role="delitoSecundario" EntitySet="delitoSecundario" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_hecho" Association="Self.FK_delito_hecho">
+            <End Role="hecho" EntitySet="hecho" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_oficina" Association="Self.FK_delito_oficina">
+            <End Role="oficina" EntitySet="oficina" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_delito_subCategoriaDelito" Association="Self.FK_delito_subCategoriaDelito">
+            <End Role="subCategoriaDelito" EntitySet="subCategoriaDelito" />
+            <End Role="delito" EntitySet="delito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expediente_persona" Association="Self.FK_expediente_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="expediente" EntitySet="expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lugar_x_hecho" Association="Self.FK_lugar_x_hecho">
+            <End Role="lugarHecho" EntitySet="lugarHecho" />
+            <End Role="hecho" EntitySet="hecho" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_imagen" Association="Self.FK_objeto_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_imagen" Association="Self.FK_persona_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_imagen" Association="Self.FK_vehiculo_imagen">
+            <End Role="imagen" EntitySet="imagen" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_rol" Association="Self.FK_objeto_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_subTipoObjeto" Association="Self.FK_objeto_subTipoObjeto">
+            <End Role="subTipoObjeto" EntitySet="subTipoObjeto" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_objeto_tipoObjeto" Association="Self.FK_objeto_tipoObjeto">
+            <End Role="tipoObjeto" EntitySet="tipoObjeto" />
+            <End Role="objeto" EntitySet="objeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_poblacionVulnerable" Association="Self.FK_persona_poblacionVulnerable">
+            <End Role="poblacionVulnerable" EntitySet="poblacionVulnerable" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_rol" Association="Self.FK_persona_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_persona_tipoIdentificacion" Association="Self.FK_persona_tipoIdentificacion">
+            <End Role="tipoIdentificacion" EntitySet="tipoIdentificacion" />
+            <End Role="persona" EntitySet="persona" />
+          </AssociationSet>
+          <AssociationSet Name="FK_personaJuridica_persona" Association="Self.FK_personaJuridica_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="personaJuridica" EntitySet="personaJuridica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_policia_persona" Association="Self.FK_policia_persona">
+            <End Role="persona" EntitySet="persona" />
+            <End Role="policia" EntitySet="policia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_policia_unidad" Association="Self.FK_policia_unidad">
+            <End Role="unidad" EntitySet="unidad" />
+            <End Role="policia" EntitySet="policia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_rol" Association="Self.FK_vehiculo_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subTipoObjeto_tipoObjeto" Association="Self.FK_subTipoObjeto_tipoObjeto">
+            <End Role="tipoObjeto" EntitySet="tipoObjeto" />
+            <End Role="subTipoObjeto" EntitySet="subTipoObjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehiculo_tipoIdVehiculo" Association="Self.FK_vehiculo_tipoIdVehiculo">
+            <End Role="tipoIdVehiculo" EntitySet="tipoIdVehiculo" />
+            <End Role="vehiculo" EntitySet="vehiculo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Tarea_3_Ing_b41250ModelStoreContainer" CdmEntityContainer="Tarea_3_Ing_b41250Entities1">
+          <EntitySetMapping Name="alias">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.alias">
+              <MappingFragment StoreEntitySet="alias">
+                <ScalarProperty Name="idAlias" ColumnName="idAlias" />
+                <ScalarProperty Name="alias1" ColumnName="alias" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="caracteristicaPersona">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.caracteristicaPersona">
+              <MappingFragment StoreEntitySet="caracteristicaPersona">
+                <ScalarProperty Name="idCaracteristica" ColumnName="idCaracteristica" />
+                <ScalarProperty Name="forma" ColumnName="forma" />
+                <ScalarProperty Name="tamanio" ColumnName="tamanio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoriaDelito">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.categoriaDelito">
+              <MappingFragment StoreEntitySet="categoriaDelito">
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="delegacion">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delegacion">
+              <MappingFragment StoreEntitySet="delegacion">
+                <ScalarProperty Name="idDelegacion" ColumnName="idDelegacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="delito">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delito">
+              <MappingFragment StoreEntitySet="delito">
+                <ScalarProperty Name="idDelito" ColumnName="idDelito" />
+                <ScalarProperty Name="origen" ColumnName="origen" />
+                <ScalarProperty Name="numeroUnico" ColumnName="numeroUnico" />
+                <ScalarProperty Name="modalidad" ColumnName="modalidad" />
+                <ScalarProperty Name="victima" ColumnName="victima" />
+                <ScalarProperty Name="subvictima" ColumnName="subvictima" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+                <ScalarProperty Name="perjuicio" ColumnName="perjuicio" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="tentativa" ColumnName="tentativa" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="narracion" ColumnName="narracion" />
+                <ScalarProperty Name="idCatDelito" ColumnName="idCatDelito" />
+                <ScalarProperty Name="idSubCatDelito" ColumnName="idSubCatDelito" />
+                <ScalarProperty Name="idDelitoSec" ColumnName="idDelitoSec" />
+                <ScalarProperty Name="idOficina" ColumnName="idOficina" />
+                <ScalarProperty Name="idHecho" ColumnName="idHecho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="delitoSecundario">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.delitoSecundario">
+              <MappingFragment StoreEntitySet="delitoSecundario">
+                <ScalarProperty Name="idDelito" ColumnName="idDelito" />
+                <ScalarProperty Name="delitoS" ColumnName="delitoS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="expediente">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.expediente">
+              <MappingFragment StoreEntitySet="expediente">
+                <ScalarProperty Name="idExpediente" ColumnName="idExpediente" />
+                <ScalarProperty Name="numExpediente" ColumnName="numExpediente" />
+                <ScalarProperty Name="subGrupoVictimario" ColumnName="subGrupoVictimario" />
+                <ScalarProperty Name="numAutopsia" ColumnName="numAutopsia" />
+                <ScalarProperty Name="tipoMuerte" ColumnName="tipoMuerte" />
+                <ScalarProperty Name="funcion" ColumnName="funcion" />
+                <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+                <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+                <ScalarProperty Name="atributo" ColumnName="atributo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hecho">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.hecho">
+              <MappingFragment StoreEntitySet="hecho">
+                <ScalarProperty Name="idHecho" ColumnName="idHecho" />
+                <ScalarProperty Name="tipoUbicacion" ColumnName="tipoUbicacion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="proyeccion" ColumnName="proyeccion" />
+                <ScalarProperty Name="señas" ColumnName="señas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="imagen">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.imagen">
+              <MappingFragment StoreEntitySet="imagen">
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="imagen1" ColumnName="imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lugarHecho">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.lugarHecho">
+              <MappingFragment StoreEntitySet="lugarHecho">
+                <ScalarProperty Name="idLugar" ColumnName="idLugar" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="canton" ColumnName="canton" />
+                <ScalarProperty Name="distrito" ColumnName="distrito" />
+                <ScalarProperty Name="barrio" ColumnName="barrio" />
+                <ScalarProperty Name="avenida" ColumnName="avenida" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="x" ColumnName="x" />
+                <ScalarProperty Name="y" ColumnName="y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="objeto">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.objeto">
+              <MappingFragment StoreEntitySet="objeto">
+                <ScalarProperty Name="idObjeto" ColumnName="idObjeto" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+                <ScalarProperty Name="atributo" ColumnName="atributo" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="decomisado" ColumnName="decomisado" />
+                <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+                <ScalarProperty Name="idSubTipo" ColumnName="idSubTipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oficina">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.oficina">
+              <MappingFragment StoreEntitySet="oficina">
+                <ScalarProperty Name="idOficina" ColumnName="idOficina" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="persona">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.persona">
+              <MappingFragment StoreEntitySet="persona">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+                <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+                <ScalarProperty Name="profesion" ColumnName="profesion" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="detenido" ColumnName="detenido" />
+                <ScalarProperty Name="desaparecido" ColumnName="desaparecido" />
+                <ScalarProperty Name="revisado" ColumnName="revisado" />
+                <ScalarProperty Name="idCaracteristica" ColumnName="idCaracteristica" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+                <ScalarProperty Name="idPoblacion" ColumnName="idPoblacion" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="personaJuridica">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.personaJuridica">
+              <MappingFragment StoreEntitySet="personaJuridica">
+                <ScalarProperty Name="idPersonaJuridica" ColumnName="idPersonaJuridica" />
+                <ScalarProperty Name="cedulaJuridica" ColumnName="cedulaJuridica" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="nombreFantasia" ColumnName="nombreFantasia" />
+                <ScalarProperty Name="filial" ColumnName="filial" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+                <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+                <ScalarProperty Name="atributo" ColumnName="atributo" />
+                <ScalarProperty Name="allanada" ColumnName="allanada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="poblacionVulnerable">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.poblacionVulnerable">
+              <MappingFragment StoreEntitySet="poblacionVulnerable">
+                <ScalarProperty Name="idPoblacion" ColumnName="idPoblacion" />
+                <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="policia">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.policia">
+              <MappingFragment StoreEntitySet="policia">
+                <ScalarProperty Name="idPolicia" ColumnName="idPolicia" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+                <ScalarProperty Name="caseta" ColumnName="caseta" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="idUnidad" ColumnName="idUnidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subCategoriaDelito">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.subCategoriaDelito">
+              <MappingFragment StoreEntitySet="subCategoriaDelito">
+                <ScalarProperty Name="idSubCategoria" ColumnName="idSubCategoria" />
+                <ScalarProperty Name="subCategoria" ColumnName="subCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subTipoObjeto">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.subTipoObjeto">
+              <MappingFragment StoreEntitySet="subTipoObjeto">
+                <ScalarProperty Name="idSubTipo" ColumnName="idSubTipo" />
+                <ScalarProperty Name="subTipo" ColumnName="subTipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoIdentificacion">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoIdentificacion">
+              <MappingFragment StoreEntitySet="tipoIdentificacion">
+                <ScalarProperty Name="tipoIdentificacion1" ColumnName="tipoIdentificacion" />
+                <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoIdVehiculo">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoIdVehiculo">
+              <MappingFragment StoreEntitySet="tipoIdVehiculo">
+                <ScalarProperty Name="idTipoVeh" ColumnName="idTipoVeh" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoObjeto">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.tipoObjeto">
+              <MappingFragment StoreEntitySet="tipoObjeto">
+                <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unidad">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.unidad">
+              <MappingFragment StoreEntitySet="unidad">
+                <ScalarProperty Name="idUnidad" ColumnName="idUnidad" />
+                <ScalarProperty Name="unidad1" ColumnName="unidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehiculo">
+            <EntityTypeMapping TypeName="Tarea_3_Ing_b41250Model.vehiculo">
+              <MappingFragment StoreEntitySet="vehiculo">
+                <ScalarProperty Name="idVehiculo" ColumnName="idVehiculo" />
+                <ScalarProperty Name="clase" ColumnName="clase" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="numeroBien" ColumnName="numeroBien" />
+                <ScalarProperty Name="anio" ColumnName="anio" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="estilo" ColumnName="estilo" />
+                <ScalarProperty Name="nombreEntidad" ColumnName="nombreEntidad" />
+                <ScalarProperty Name="intensidad" ColumnName="intensidad" />
+                <ScalarProperty Name="atributo" ColumnName="atributo" />
+                <ScalarProperty Name="poliza" ColumnName="poliza" />
+                <ScalarProperty Name="decomisa" ColumnName="decomisa" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

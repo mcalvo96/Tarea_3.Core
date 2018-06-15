@@ -1,0 +1,7 @@
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\bin\Debug\Tarea_3.Dominio.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\bin\Debug\Tarea_3.Dominio.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\bin\Debug\Tarea_3.Dominio.Entidades.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\bin\Debug\Tarea_3.Dominio.Entidades.pdb
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\obj\Debug\Tarea_3.Dominio.csprojResolveAssemblyReference.cache
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\obj\Debug\Tarea_3.Dominio.dll
+C:\Users\mcalvo96\Documents\Visual Studio 2015\Projects\Tarea_3\Tarea_3.Dominio\obj\Debug\Tarea_3.Dominio.pdb
